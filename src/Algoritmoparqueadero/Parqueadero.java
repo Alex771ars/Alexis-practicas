@@ -30,10 +30,10 @@ public class Parqueadero {
     class Vehiculo {
         String tipo;
         String placa;
-        String fechaIngreso;
+        Date fechaIngreso;
         
 
-        public Vehiculo(String tipo, String placa, String fechaIngreso) {
+        public Vehiculo(String tipo, String placa, Date fechaIngreso) {
             this.tipo = tipo;
             this.placa = placa;
             this.fechaIngreso = fechaIngreso;
@@ -41,7 +41,7 @@ public class Parqueadero {
     }
 
     // Método para registrar un vehículo
-    public String registrarVehiculo(String tipo, String placa,String fechaIngreso) {
+    public String registrarVehiculo(String tipo, String placa,Date fechaIngreso) {
         // Validar si el tipo de vehículo es válido
         if (!tipo.equals("Carro") && !tipo.equals("Moto") && !tipo.equals("Bicicleta")) {
             return "Lo siento: Este vehiculo no es permitido.";
@@ -119,8 +119,8 @@ public class Parqueadero {
                     String tipo = scanner.nextLine();
                     System.out.print("Ingrese la placa del vehiculo: ");
                     String placa = scanner.nextLine();
-                    System.out.print("Ingrese la fecha y hora de ingreso (Formato: dd/MM/yyyy HH:mm): ");
-                    String fechaIngreso = scanner.nextLine(); 
+                    //System.out.print("Ingrese la fecha y hora de ingreso (Formato: dd/MM/yyyy HH:mm): ");
+                    Date fechaIngreso = new Date(); 
                     System.out.println(registrarVehiculo(tipo,placa,fechaIngreso));
                     break;
 
